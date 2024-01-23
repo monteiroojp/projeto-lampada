@@ -28,5 +28,5 @@ function desligar(){
 function quebrar(){
     if(!lampestragada()){
         img.src = 'imagens/quebrada.jpg'
-    }
+    }    
 }
