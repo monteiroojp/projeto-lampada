@@ -31,20 +31,3 @@ input{
     border-radius: 5px;
     cursor: pointer;
 }
-
-input#on{
-    background-color: green;
-    color: white;
-}
-input#on:hover{
-    background-color: lightgreen;
-}
-
-input#off{
-    background-color: rgb(255, 0, 0);
-    color: black;
-}
-
-input#off:hover{
-    background-color: rgb(255, 147, 147);
-}

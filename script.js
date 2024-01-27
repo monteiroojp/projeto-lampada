@@ -1,32 +1,41 @@
-var on = document.getElementById('on')
-on.addEventListener('click' , ligar)
+let butOnOff = window.document.getElementById('butOnOff')
+butOnOff.addEventListener('click' , lampOnOff)
 
-var of = document.getElementById('off')
-of.addEventListener('click', desligar)
+let lamp = window.document.getElementById('lamp')
 
-var img = document.getElementById('lamp')
-img.addEventListener('mouseenter' , ligar)
-img.addEventListener('mouseout' , desligar)
-img.addEventListener('dblclick' , quebrar)
-
-function lampestragada(){
-    return img.src.indexOf('quebrada') > -1
-}
-
-function ligar(){
-    if(!lampestragada() ){
-        img.src = 'imagens/ligada.jpg'
+function lampOnOff(){
+    if(butOnOff.value == 'Ligar'){
+        Ligar()
+        butOnOff.value = 'Desligar'
+    }
+    else{
+        Desligar()
+        butOnOff.value = 'Ligar'
     }
 }
 
-function desligar(){
-    if(!lampestragada()){
-        img.src = 'imagens/desligada.jpg'
+function Ligar(){
+    if(!isLampBroken()){
+        lamp.src = 'imagens/ligada.jpg'
     }
 }
 
-function quebrar(){
-    if(!lampestragada()){
-        img.src = 'imagens/quebrada.jpg'
-    }    
+lamp.addEventListener('mouseenter' , Ligar)
+
+function Desligar(){
+    if(!isLampBroken()){
+    lamp.src = 'imagens/desligada.jpg'
+    }
 }
+
+lamp.addEventListener('mouseout' , Desligar)
+
+function isLampBroken(){
+    return lamp.src.indexOf  ('quebrada')  > -1
+}
+
+function Quebrar(){
+    lamp.src = 'imagens/quebrada.jpg'
+}
+
+lamp.addEventListener('dblclick' , Quebrar)
